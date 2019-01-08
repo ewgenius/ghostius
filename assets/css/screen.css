@@ -32,7 +32,7 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 
 body {
-    background: #f4f8fb;
+    background: #fff;
 }
 
 .img {
@@ -112,12 +112,12 @@ body {
     position: relative;
     padding-top: 12px;
     padding-bottom: 12px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
+    /* color: #fff; */
+    /* background: color(var(--darkgrey) l(-5%)) no-repeat center center; */
     background-size: cover;
 }
 
-.site-header:before {
+/* .site-header:before {
     content: "";
     position: absolute;
     top: 0;
@@ -140,7 +140,7 @@ body {
     display: block;
     height: 80px;
     background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
-}
+} */
 
 .site-header.no-cover:before,
 .site-header.no-cover:after {
@@ -231,7 +231,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin-right: 24px;
     padding: 11px 0;
-    color: #fff;
+    /* color: #fff; */
     font-size: 1.7rem;
     line-height: 1em;
     font-weight: bold;
@@ -266,8 +266,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin: 0;
     padding: 10px 12px;
-    color: #fff;
+    color: color(var(--midgrey) l(-25%));
     opacity: 0.8;
+}
+
+.nav-current a {
+    opacity: 1 !important;
 }
 
 .nav li a:hover {
@@ -393,7 +397,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     background: #fff center center;
     background-size: cover;
     border-radius: 5px;
-    box-shadow: rgba(39,44,49,0.06) 8px 14px 38px, rgba(39, 44, 49, 0.03) 1px 3px 8px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
 }
 
@@ -582,7 +586,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     }
 }
 
-.reading-time {
+.reading-time, .posted-time {
     flex-shrink: 0;
     margin-left: 20px;
     color: var(--midgrey);
@@ -591,6 +595,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     font-weight: 500;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+}
+
+.posted-time {
+    margin-left: 0px;
 }
 
 /* Special Styling for home page grid (below):
@@ -710,7 +718,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 0 -10vw -165px;
+    margin: 0 -10vw 20px;
     background: var(--lightgrey) center center;
     border-radius: 5px;
     overflow: hidden;
@@ -724,7 +732,7 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 @media (max-width: 1170px) {
     .post-full-image {
-        margin: 0 -4vw -100px;
+        margin: 0 -4vw 20px;
         border-radius: 0;
     }
     .post-full-image img {
@@ -758,34 +766,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-full-content {
         font-size: 1.9rem;
     }
-}
-
-.post-full-content:before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(-5deg);
-}
-
-.post-full-content:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    right: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(5deg);
 }
 
 .no-image .post-full-content {
@@ -2220,11 +2200,10 @@ Usage (In Ghost editor):
 /* ---------------------------------------------------------- */
 
 .site-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
     padding-top: 20px;
     padding-bottom: 60px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-15%));
 }
 
 .site-footer-content {
@@ -2232,17 +2211,17 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: rgba(255,255,255,0.7);
     font-size: 1.3rem;
 }
 
 .site-footer-content a {
-    color: rgba(255,255,255,0.7);
+    color: color(var(--midgrey) l(-25%));
+    opacity: 0.8;
 }
 
 .site-footer-content a:hover {
-    color: rgba(255,255,255,1);
     text-decoration: none;
+    opacity: 1;
 }
 
 .site-footer-nav {
@@ -2252,18 +2231,6 @@ Usage (In Ghost editor):
 .site-footer-nav a {
     position: relative;
     margin-left: 20px;
-}
-
-.site-footer-nav a:before {
-    content: "";
-    position: absolute;
-    top: 11px;
-    left: -11px;
-    display: block;
-    width: 2px;
-    height: 2px;
-    background: #fff;
-    border-radius: 100%;
 }
 
 .site-footer-nav a:first-of-type:before {
