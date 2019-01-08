@@ -13,6 +13,8 @@
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/brands.css" integrity="sha384-1KLgFVb/gHrlDGLFPgMbeedi6tQBLcWvyNUN+YKXbD7ZFbjX6BLpMDf0PJ32XJfX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -30,9 +32,11 @@
             <div class="site-footer-content inner">
                 <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
                 <nav class="site-footer-nav">
-                    <a href="{{@blog.url}}">Latest Posts</a>
-                    {{#if @blog.facebook}}<a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @blog.twitter}}<a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
+                    <a href="https://github.com/ewgenius" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                    <a href="https://facebook.com/ewgenius" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/ewgeniux" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/ewgeniux" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    <a href="https://vk.com/iewgenius" target="_blank" rel="noopener"><i class="fab fa-vk"></i></a>
                 </nav>
             </div>
         </footer>
